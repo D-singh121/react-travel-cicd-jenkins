@@ -1,0 +1,177 @@
+:root {
+    --PrimaryColor: hsl(199, 100%, 33%);
+    --SecondaryColor: hsl(187, 85%, 43%);
+    --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(201, 33%, 16%);
+    --textColor: hsl(240, 4%, 36%);
+    --whiteColorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputColor: rgb(239, 239, 239);
+    --bodyColor: rgb(240, 240, 246);
+    --cardBG: rgb(225, 225, 235);
+    --cardHover: rgb(255, 255, 255);
+}
+
+.main {
+    width: 100%;
+
+    .secTitle {
+        .title {
+            position: relative;
+            margin: 1rem 0;
+            color: var(--textColor);
+            width: max-content;
+            z-index: 2;
+
+            &::after {
+                position: absolute;
+                content: "";
+                background: var(--SecondaryColor);
+                height: 4px;
+                bottom: -4px;
+                z-index: -1;
+                width: 75px;
+                right: 0;
+            }
+        }
+    }
+
+    .secContent {
+        justify-content: center;
+        gap: 1.5rem;
+
+        .singleDestination {
+            height: 100%;
+            display: grid;
+            // padding: 1rem;
+            row-gap: 10px;
+            border-radius: 10px;
+            align-items: center;
+            background: var(--cardBG);
+            box-shadow: 0 2px 4px rgba(140, 140, 141, 0.548);
+            overflow: hidden;
+
+            &:hover {
+                background: var(--cardHover);
+                box-shadow: 1 4px 4px rgba(85, 85, 114, 0.549);
+                transition: 0.3s ease;
+            }
+
+            .imgDiv {
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    transition: 2s ease;
+                }
+
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            .cardInfo {
+                padding: 1rem;
+
+                .destTitle {
+                    color: var(--blackColor);
+                    font-size: 1.25rem;
+                }
+
+                .continent {
+                    gap: 0.5rem;
+
+                    .icon {
+                        color: var(--textColor);
+                        font-size: 20px;
+                    }
+
+                    .name {
+                        font-weight: 400;
+                        color: var(--textColor);
+                        font-size: 14px;
+                    }
+                }
+
+                .fees {
+                    width: 100%;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    margin: 1rem 0;
+                    border-top: 1.5px solid var(--greyText);
+                    border-bottom: 1.5px solid var(--greyText);
+                    .grade {
+                        color: var(--textColor);
+                        max-width: 100px;
+                        line-height: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        small {
+                            text-align: center;
+                            border-radius: 10px;
+                            background: var(--gradientColor);
+                            color: var(--whiteColor);
+                            padding: 1px 10px;
+                            font-size: 10px;
+                        }
+                    }
+
+                    .price {
+                        font-size: 2rem;
+                        color: var(--blackColor);
+                    }
+                }
+
+                .desc {
+                    font-size: 13px;
+                    color: var(--textColor);
+                    font-weight: 500;
+                }
+
+                .btn {
+                    margin-top: 1rem;
+                    color: var(--whiteColor);
+                    font-weight: 600;
+                    justify-content: space-between;
+                    gap: 0.5rem;
+
+                    .icon {
+                        align-self: center;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 760px) {
+    .secContent {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (min-width: 960px) {
+    .secContent {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .section{
+        padding: 4rem 3rem 4rem;
+    }
+}
+@media screen and (min-width: 1240px) {
+    .main {
+        .secContent {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+    }
+}

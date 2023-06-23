@@ -1,0 +1,14 @@
+
+const Data = [
+
+    {
+      id:1,  
+      imgSrc:img1,
+      destination:'Dale lake'
+      location:'Shree Nagar',
+      grade:'CULTURAL RELAX'
+      fees: '$500',
+      dscription: 'Dal is a lake in Srinagar, the summer capital of Jammu and Kashmir, India. It is an urban lake, the second largest lake in Jammu and Kashmir, and the most visited place in Srinagar by tourists and locals.'
+    }
+
+]
